@@ -1,0 +1,145 @@
+1. What is Emmet?
+
+Emmet is a powerful toolkit for web developers that can greatly improve their workflow, especially when working with HTML and CSS. In Visual Studio Code (VS Code), Emmet is a built-in feature that provides shortcuts and abbreviations for writing HTML and CSS code more quickly and efficiently.
+
+With Emmet in VS Code, you can type simple abbreviations and then expand them into full HTML or CSS code snippets automatically. For example, typing "html:5" and then pressing the Tab key would expand into the basic structure of an HTML5 document.
+
+Emmet supports a wide range of abbreviations and shortcuts for generating HTML and CSS code, making it easier to write complex markup and stylesheets with minimal keystrokes.
+
+Overall, Emmet in VS Code is a valuable tool for front-end web developers, as it helps them write code faster and more efficiently.
+
+2. Difference between a Library and Framework?
+
+The terms "library" and "framework" are often used interchangeably, but they represent distinct concepts in software development:
+
+Library:
+
+A library is a collection of reusable code modules or functions that provide specific functionality.
+Libraries typically consist of a set of functions or classes that you can call or use within your own code.
+Libraries are designed to be flexible and provide specific features or utilities without enforcing any particular structure or flow of your application.
+Examples of libraries include React for building user interfaces, TensorFlow for machine learning, and jQuery for DOM manipulation.
+Framework:
+
+A framework is a broader structure that provides a skeleton for building an application.
+Frameworks dictate the overall architecture, flow, and organization of your application.
+Frameworks often impose a specific structure or design pattern (such as MVC - Model-View-Controller) that developers must follow when building their applications.
+Frameworks usually include a set of libraries and tools that work together to provide a complete solution for developing software.
+Examples of frameworks include AngularJS for building web applications, Django for web development in Python, and .NET for building various types of applications in the Microsoft ecosystem.
+In summary, while both libraries and frameworks provide reusable code components, libraries focus on specific functionalities that you can use within your code, while frameworks provide a broader structure and dictate the overall architecture and flow of your application.
+
+3. ● What is CDN? Why do we use it?
+CDN stands for Content Delivery Network. It is a distributed network of servers located in multiple data centers across various geographic locations. The primary purpose of a CDN is to deliver web content to users more efficiently, reliably, and quickly. Here's why we use CDNs:
+
+Faster Content Delivery: CDNs cache copies of static content (such as images, CSS files, JavaScript files, videos, and other media) on servers located closer to the end-users. When a user requests this content, the CDN serves it from the nearest server, reducing latency and load times. This results in faster content delivery and a better user experience.
+
+Improved Performance: By distributing content across multiple servers and leveraging caching mechanisms, CDNs help offload traffic from origin servers. This reduces the load on the origin server, improves its performance, and enhances overall website performance and scalability.
+
+Higher Availability and Reliability: CDNs replicate content across multiple servers and data centers, increasing redundancy and improving fault tolerance. If one server or data center fails, the CDN automatically redirects traffic to other available servers, ensuring continuous content delivery and minimizing downtime.
+
+Scalability: CDNs can handle sudden spikes in traffic more effectively by distributing the load across their network of servers. This scalability ensures that websites and web applications remain responsive and accessible even during periods of high demand, such as during promotional events or viral content sharing.
+
+Geographic Reach: CDNs have a global presence with servers located in various regions worldwide. This geographic distribution reduces the distance between users and content, resulting in shorter network routes and lower latency. It ensures that users from different parts of the world can access content quickly and reliably.
+
+Security: Many CDNs offer security features such as DDoS protection, web application firewall (WAF), SSL/TLS encryption, and content authentication. These security measures help mitigate cyber threats, protect against malicious attacks, and ensure the integrity and confidentiality of content delivered through the CDN.
+
+Overall, CDNs are used to optimize content delivery, enhance website performance, improve scalability and availability, and provide enhanced security features, ultimately resulting in a better user experience and higher satisfaction.
+
+
+4. ● Why is React known as React?
+React, the popular JavaScript library for building user interfaces, is known as "React" because of the way it manages updates to the user interface. The name "React" comes from its core concept of reacting to changes in data and automatically updating the UI to reflect those changes.
+
+In React, you define UI components as functions or classes that return a representation of what should be rendered on the screen. These components are then composed together to create complex UIs. When the underlying data changes, React automatically updates the UI to reflect those changes, without the need for manual manipulation of the DOM (Document Object Model).
+
+The key idea behind React is its "reactive" nature, where the UI reacts to changes in data and updates itself accordingly. This approach simplifies the process of building interactive and dynamic web applications, as developers can focus on describing the UI in terms of components and let React handle the rendering and updating logic efficiently.
+
+So, the name "React" embodies the core principle of the library, which is to create reactive and responsive user interfaces that dynamically update in response to changes in data.
+
+5.● What is crossorigin in script tag?
+
+The crossorigin attribute in the <script> tag is used to specify how the browser should handle requests made by a script when fetching resources from another origin (i.e., a different domain, protocol, or port).
+
+When you include an external script file using the <script> tag, the browser typically makes a cross-origin request to fetch the script file. Cross-origin requests are subject to the same-origin policy, which is a security feature implemented by web browsers to prevent scripts on one origin from accessing resources on another origin, unless the other origin explicitly allows it.
+
+The crossorigin attribute can have the following values:
+
+Anonymous: This is the default value if the attribute is present but no value is specified. When crossorigin="anonymous" is set, the browser will make the cross-origin request without sending any credentials (such as cookies or authentication headers). This is suitable for cases where the resource being fetched allows anonymous access from any origin.
+
+Example:
+
+html
+<script src="https://example.com/script.js" crossorigin="anonymous"></script>
+Use Credentials: Setting crossorigin="use-credentials" indicates that the browser should include credentials (such as cookies or authentication headers) when making the cross-origin request. This is used when the server expects authentication credentials for accessing the resource.
+
+Example:
+
+html
+<script src="https://example.com/script.js" crossorigin="use-credentials"></script>
+It's important to note that the crossorigin attribute is typically used when loading scripts from a different origin and is relevant mainly for script files fetched via <script src="..."></script>. It doesn't apply to inline scripts or scripts loaded via other means (such as dynamically created <script> tags). Additionally, the server hosting the script must support CORS (Cross-Origin Resource Sharing) headers to allow cross-origin requests with credentials if necessary.
+
+
+6.● What is diference between React and ReactDOM
+
+React and ReactDOM are two distinct libraries within the React ecosystem, each serving a different purpose:
+
+React:
+
+React is a JavaScript library for building user interfaces.
+Its primary focus is on providing a declarative and component-based approach to UI development.
+React allows developers to create reusable UI components and manage the state of those components efficiently.
+It provides features such as JSX (JavaScript XML) syntax for writing UI components, virtual DOM for efficient rendering, component lifecycle methods, and hooks for managing state and side effects.
+ReactDOM:
+
+ReactDOM is a package that serves as the glue between React components and the DOM (Document Object Model).
+It provides methods for rendering React components into the DOM and updating them when the underlying data changes.
+ReactDOM is responsible for the actual rendering of React components onto the browser screen.
+It provides APIs such as ReactDOM.render() for rendering React elements into a container DOM node, ReactDOM.hydrate() for server-side rendering with hydration, and ReactDOM.unmountComponentAtNode() for unmounting React components from the DOM.
+In summary, while React is the core library for building user interfaces with a component-based architecture and state management, ReactDOM is responsible for rendering those React components into the browser DOM and handling interactions with the underlying HTML elements. Together, React and ReactDOM form the foundation for building interactive and dynamic web applications.
+
+7. ● What is difference between react.development.js and react.production.js files via CDN?
+
+The difference between react.development.js and react.production.js files lies in their intended use and optimizations applied to each version:
+
+react.development.js:
+
+This file is intended for development purposes.
+It includes helpful warnings and debugging information in the console, which aids developers in identifying potential issues and debugging their React applications.
+It is larger in size compared to the production version because of the additional code necessary for providing debugging capabilities.
+It is not optimized for performance but provides a better development experience.
+react.production.js:
+
+This file is optimized for production use.
+It does not include any debugging information or warnings, resulting in a smaller file size compared to the development version.
+It is stripped of any development-specific code and optimizations are applied to improve performance and reduce the file size.
+It is suitable for use in production environments where minimizing the size of the JavaScript bundle and maximizing performance are crucial.
+When using React in a production environment, it's recommended to use react.production.js to ensure optimal performance and minimize the size of the JavaScript bundle delivered to users. During development, react.development.js can be used to take advantage of the debugging features and helpful warnings provided by React. However, it's essential to switch to react.production.js for production deployments to ensure the best possible performance and user experience.
+
+
+8. What is async and defer?
+
+async and defer are attributes that can be used with the <script> tag in HTML to control how the browser downloads and executes external JavaScript files. They are primarily used to optimize the loading and execution of scripts, especially when dealing with scripts that are not critical for rendering the initial content of the webpage.
+
+Here's how each attribute works:
+
+async:
+When you add the async attribute to a <script> tag, it tells the browser to download the script file asynchronously while continuing to parse and render the rest of the HTML document.
+Once the script file is downloaded, it will be executed immediately, regardless of whether the HTML parsing is complete or not.
+This can lead to faster loading times, as the script does not block the parsing and rendering of the HTML document.
+However, scripts loaded with async may not execute in the order they appear in the HTML document, which can sometimes lead to race conditions or unexpected behavior if scripts depend on each other.
+Example:
+
+html
+Copy code
+<script src="script.js" async></script>
+defer:
+When you add the defer attribute to a <script> tag, it also tells the browser to download the script file asynchronously.
+However, unlike async, scripts with the defer attribute will only be executed after the HTML parsing is complete, just before the DOMContentLoaded event fires.
+This ensures that the scripts are executed in the order they appear in the HTML document and after the entire DOM has been constructed.
+Like async, defer can also improve loading times by allowing the HTML document to be parsed and rendered without waiting for script execution.
+Example:
+
+html
+Copy code
+<script src="script.js" defer></script>
+In summary, both async and defer are used to improve the loading and execution of external JavaScript files, but they differ in when the scripts are executed relative to the HTML parsing process. Use async for scripts that can be executed independently and defer for scripts that need to be executed after the DOM is fully constructed.
+
+
