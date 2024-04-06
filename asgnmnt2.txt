@@ -1,0 +1,209 @@
+What is `NPM`?
+
+NPM manages the packages..It's like repository for all the packages. We install, use , share and manage packages using npm
+
+ What is `Parcel/Webpack`? Why do we need it?
+
+ Parcel and Webpack are both module bundlers for JavaScript applications. They are tools that help manage and bundle various assets, such as JavaScript files, CSS files, images, and more, into a single output file or set of files that can be served to the browser.
+
+Here's a brief overview of each:
+
+Parcel:
+
+Parcel is a relatively newer module bundler that aims to simplify the build process for web applications.
+It has built-in support for many common web development features, such as automatic transpilation of modern JavaScript (ES6+), CSS preprocessing, and hot module replacement (HMR), which allows for faster development workflows.
+Parcel uses a zero-configuration approach, meaning it tries to minimize the need for explicit configuration files and instead relies on sensible defaults.
+Webpack:
+
+Webpack is a highly configurable and powerful module bundler that has been widely adopted in the JavaScript ecosystem.
+It offers extensive customization options through its configuration file (webpack.config.js), allowing developers to fine-tune how their assets are processed and bundled.
+Webpack is often used in more complex projects where fine-grained control over the build process is required. It supports features like code splitting, tree shaking (dead code elimination), and a wide range of plugins and loaders to handle different types of assets.
+Why do we need them?
+
+Efficient asset management: Both Parcel and Webpack help organize and manage various assets required for web applications, including JavaScript files, CSS stylesheets, images, fonts, etc.
+
+Dependency management: They facilitate the management of dependencies by allowing developers to import and use external libraries and modules in their projects.
+
+Performance optimization: Module bundlers like Webpack can optimize assets for performance, such as minimizing file sizes, reducing network requests, and optimizing caching strategies.
+
+Development workflow: They streamline the development workflow by providing features like hot module replacement (HMR), which enables instant updates to the browser as changes are made in the codebase, without requiring a full page reload.
+
+In summary, Parcel and Webpack are essential tools in modern web development for organizing, optimizing, and streamlining the build process of complex JavaScript applications. They help developers manage dependencies, improve performance, and enhance the overall development experience.
+
+
+ What is `.parcel-cache`
+
+ 
+The .parcel-cache directory is a directory created by Parcel, the web application bundler, during the build process. It is used to store cached data and artifacts generated during the build process to improve subsequent build times.
+
+When Parcel bundles a web application, it analyzes the source code, processes assets, and generates the bundled output. During this process, Parcel may cache intermediate data, such as compiled JavaScript files, CSS stylesheets, or other processed assets, within the .parcel-cache directory.
+
+By caching these intermediate artifacts, Parcel can avoid reprocessing unchanged files and dependencies during subsequent builds, which can significantly improve build performance, especially in larger projects.
+
+The .parcel-cache directory is typically located in the root directory of your project alongside other configuration files like package.json. It is safe to delete this directory if necessary, as Parcel will regenerate the cache as needed during subsequent builds. However, deleting the cache may temporarily impact build performance until Parcel re-creates the necessary cached data.
+
+
+What is `npx` ?
+
+npx is a command-line utility that comes bundled with Node.js (version 5.2.0 and later) and is used to execute Node.js packages. The primary purpose of npx is to provide a way to run packages installed via npm without having to install them globally or explicitly specifying their paths.
+
+Here's how npx works:
+
+Executing locally installed packages: If you have a package installed locally in your project's node_modules directory (typically installed via npm), you can use npx to execute commands provided by that package.
+
+Running packages from npm registry: If a package is not installed locally but is available on the npm registry, npx can download and execute it without needing to install it globally or manage its version explicitly.
+
+Executing specific versions: npx allows you to specify the version of the package you want to run by appending the package name with @<version>.
+
+Using executables from packages: npx looks for executables defined in the bin field of a package's package.json file and makes them available for execution without needing to know their exact path.
+
+Overall, npx is a handy tool for running Node.js packages and commands, especially in scenarios where you want to avoid polluting your global npm environment with packages that are only used occasionally or in specific projects. It simplifies the process of executing commands provided by npm packages and helps manage dependencies more efficiently.
+
+
+What is difference between `dependencies` vs `devDependencies`
+
+dependencies and devDependencies lies in their purpose and usage. Dependencies are required for the application to function in a production environment, while devDependencies are only needed during development or for building the project. Separating these dependencies helps keep the production environment clean and ensures that only necessary packages are installed for production use.
+
+ What is Tree Shaking?
+
+ Tree shaking is a technique used in JavaScript module bundlers, such as Webpack or Rollup, to eliminate dead code or unused modules from the final bundle. The term "tree shaking" originates from the idea of shaking a tree to remove dead leaves while keeping the healthy ones.
+
+Here's how tree shaking works:
+
+Module System: JavaScript applications are often structured using modules, which are individual files that encapsulate a piece of functionality. Modules can import functionality from other modules and export their own functionality for use elsewhere.
+
+Unused Code Detection: Tree shaking analyzes the dependency graph of the application to determine which modules and functions are actually used. It traverses the import/export relationships between modules to build a dependency tree.
+
+Dead Code Elimination: Once the dependency tree is constructed, tree shaking identifies modules or parts of modules that are not imported or used anywhere in the application. These unused modules and functions are considered dead code.
+
+Bundle Optimization: Finally, tree shaking removes the dead code from the final bundled output, resulting in a leaner and more efficient bundle size. Removing unused code can significantly reduce the size of the JavaScript bundle sent to the browser, leading to faster loading times and improved performance for the application.
+
+Tree shaking is particularly beneficial in large-scale applications where there may be many modules and dependencies. By eliminating dead code, developers can optimize the size of their bundles and improve the overall efficiency of their applications. However, for tree shaking to work effectively, modules must use static import/export syntax, as dynamic imports cannot be statically analyzed for dead code elimination.
+
+
+ What is Hot Module Replacement?
+
+
+ Hot Module Replacement (HMR) is a feature commonly found in module bundlers like Webpack, Parcel, and others. It allows developers to update modules in an application without requiring a full page reload or losing the application state.
+
+Here's how Hot Module Replacement typically works:
+
+Module Replacement: When a developer makes changes to a module (e.g., a JavaScript file, a CSS file, or a template), the HMR system identifies which modules have been modified.
+
+Patch Update: Instead of refreshing the entire page, HMR applies the changes to the running application while it's still running. It patches or updates only the modified modules, preserving the state of the application and avoiding unnecessary reloads.
+
+Preservation of State: HMR aims to maintain the application's state across updates. This means that if the developer changes a function or logic in a module, the updated version of the module is swapped in without losing the current state of the application.
+
+Fast Feedback Loop: HMR significantly speeds up the development workflow by providing instant feedback to developers as they make changes. They can see the effects of their code modifications immediately without having to wait for the entire application to rebuild and reload.
+
+No Loss of State: Since only the modified modules are updated, HMR ensures that any state maintained by the application (such as form data, component states, etc.) remains intact during the update process.
+
+HMR is especially valuable in modern web development workflows where rapid iteration and instant feedback are crucial. It helps developers to be more productive by reducing the time spent waiting for builds and reloads, thus enabling a faster and more efficient development process.
+
+
+ List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+own words.
+Zero Configuration: Parcel offers a zero-configuration setup, meaning you can start using it without having to write any configuration files. This makes it incredibly easy to set up and use, especially for beginners or for small projects where complex configurations are unnecessary.
+
+Automatic Asset Resolution: Parcel automatically resolves and bundles various types of assets, including JavaScript, CSS, HTML, images, and more, out of the box. It intelligently handles dependencies and ensures they are included in the final bundle without requiring explicit configuration.
+
+Fast Development Workflow: Parcel provides features like hot module replacement (HMR) that enable a fast development workflow. With HMR, changes made to the code are instantly reflected in the running application without the need for a full page reload, resulting in quicker feedback loops for developers.
+
+Built-in Support for Modern Web Features: Parcel comes with built-in support for modern web features like ES6+ JavaScript, CSS preprocessors (e.g., Sass, Less), and CSS autoprefixing. This allows developers to write code using the latest language features and preprocessors without additional configuration or setup.
+
+Efficient Production Builds: Parcel optimizes production builds by automatically minifying and bundling assets, as well as enabling features like code splitting and tree shaking to reduce bundle size. This ensures that the final production bundle is lean and optimized for performance.
+
+Now, let's describe three of these features in more detail:
+
+Zero Configuration: Parcel's zero-configuration setup eliminates the need for developers to spend time configuring build settings, webpack, or other tools. This simplicity allows developers to focus more on writing code rather than dealing with build configurations, making it ideal for quick prototyping or small projects.
+
+Automatic Asset Resolution: Parcel's ability to automatically resolve and bundle various types of assets simplifies the development process. Developers don't need to manually specify each asset's path or include it in the build configuration. Parcel intelligently detects dependencies and includes them in the bundle, reducing the likelihood of missing assets or configuration errors.
+
+Fast Development Workflow with HMR: Parcel's built-in support for hot module replacement (HMR) speeds up the development process by providing instant feedback on code changes. Instead of waiting for the entire application to rebuild and reload, developers can see the effects of their changes immediately in the browser. This rapid feedback loop enhances productivity and enables a more iterative development approach.
+
+
+ What is `.gitignore`? What should we add and not add into it?
+ .gitignore is a file used by Git to specify intentionally untracked files that Git should ignore. When you create a .gitignore file in your Git repository, you can list files, directories, or file patterns that you want Git to disregard, preventing them from being included in version control or showing up as untracked files when running git status.
+  .gitignore file is used to specify files and directories that Git should ignore, typically including generated files, dependency directories, environment-specific files, and editor configurations. It's essential to carefully consider what should and should not be ignored to maintain a clean and efficient version-controlled repository.
+
+ What is the difference between `package.json` and `package-lock.json`
+ both package.json and package-lock.json are used to manage dependencies in a Node.js project, package.json contains metadata and dependency declarations, while package-lock.json is a detailed record of the exact dependency tree and versions installed in the project. The package-lock.json file ensures deterministic dependency resolution and consistent builds across different environments.
+
+ Why should I not modify `package-lock.json`?
+ Modifying package-lock.json directly is generally not recommended for several reasons:
+
+Dependency Consistency: package-lock.json is designed to ensure consistent and reproducible builds by locking down the exact versions of dependencies used in a project. Modifying it manually can lead to inconsistencies between development environments, as different developers may end up with different versions of dependencies.
+
+Integrity Checks: package-lock.json includes integrity hashes for each installed package, which are used to verify that the package contents have not been tampered with. Modifying the file can break these integrity checks and potentially compromise the security and reliability of the project.
+
+Automated Dependency Management: package-lock.json is automatically generated and updated by package managers like npm or Yarn based on the dependencies listed in package.json. Manually editing package-lock.json bypasses this automated dependency management process, making it harder to track and manage dependencies over time.
+
+Risk of Errors: Modifying package-lock.json manually introduces the risk of human error, such as typos or incorrect version specifications, which can lead to unexpected behavior or errors during builds and deployments.
+
+Version Conflicts: If multiple developers are working on the same project and package-lock.json is modified independently by each developer, it can lead to conflicts and inconsistencies when trying to merge changes, especially if different versions of dependencies are specified.
+
+In summary, it's best to let package managers handle the generation and management of package-lock.json to ensure consistent builds and minimize the risk of errors or conflicts. If you need to update dependencies, it's recommended to do so through the package manager's commands (npm install, npm update, yarn add, etc.) rather than directly modifying package-lock.json.
+
+
+ What is `node_modules` ? Is it a good idea to push that on git?
+ node_modules is a directory that contains all the dependencies (libraries, packages, modules) required by a Node.js project. When you use npm or Yarn to install dependencies for your project, they are downloaded and stored in the node_modules directory.
+
+As for whether it's a good idea to push node_modules to Git, the general recommendation is not to. Here's why:
+
+Large Size: The node_modules directory can become quite large, especially for projects with many dependencies. Including it in your Git repository can bloat the size of your repository, making it slow to clone and consume more storage space.
+
+Generated Files: node_modules contains generated files, such as compiled code, which are not typically necessary for version control. These files can be regenerated by running npm install or yarn install on a new machine or environment.
+
+Dependency Management: package.json and package-lock.json (or yarn.lock) are sufficient for managing dependencies. They specify the project's dependencies and their exact versions, so other developers can install the same dependencies with a simple command.
+
+Instead of committing node_modules, it's recommended to add it to your .gitignore file to exclude it from version control. This way, you keep your repository clean, avoid versioning unnecessary files, and make it easier for collaborators to work on the project without dealing with large binary files.
+
+When sharing your project with others or deploying it to a production environment, you can simply provide instructions for installing dependencies using npm install or yarn install, and these package managers will handle downloading and installing the dependencies based on the specifications in package.json and package-lock.json (or yarn.lock).
+
+
+
+ What is the `dist` folder?
+ The dist folder is often used in software development projects, particularly in web development, to store the distribution or deployment-ready version of the project. "Dist" is short for "distribution."
+
+Here's what the dist folder typically contains and its purpose:
+
+Compiled/Transpiled Code: For projects using languages like TypeScript, CoffeeScript, or newer JavaScript features that need to be transpiled for compatibility with older browsers, the dist folder may contain the compiled or transpiled code. This code is typically optimized for production use, often minified and concatenated to reduce file size and improve performance.
+
+Bundled Assets: For web applications built with modern front-end frameworks like React, Angular, or Vue.js, the dist folder may contain bundled assets such as JavaScript files, CSS files, and images. These assets are typically processed and bundled by tools like Webpack or Parcel to optimize the loading and performance of the application.
+
+Static Files: Any static files needed for the application, such as HTML templates or configuration files, may also be included in the dist folder.
+
+Deployment Artifacts: The dist folder serves as the output directory for the final build or distribution of the project. It contains all the files and assets needed to deploy the application to a production environment.
+
+The dist folder is often generated as part of the build process, typically triggered by a build script or task runner like npm scripts, Gulp, or Grunt. It represents the culmination of the development process, where the source code is transformed, optimized, and prepared for deployment.
+
+It's important to note that the dist folder is typically not included in version control systems like Git. Instead, it's generated dynamically during the build process based on the source code and configuration files in the project. This ensures that only the necessary files for deployment are included in the dist folder, keeping the repository clean and reducing its size.
+
+
+ What is `browserlists`
+ Browserslist is a configuration file that is used to specify which browsers and browser versions a front-end project should support. It's typically used by tools like Autoprefixer, Babel, and PostCSS to determine which CSS and JavaScript transformations or polyfills should be applied based on the specified browser targets
+
+Read about dif bundlers: vite, webpack, parcel
+
+
+ Read about: ^ - caret and ~ - tilda
+
+, the caret (^) and tilde (~) symbols are often used to specify version ranges for dependencies. These symbols allow developers to express flexibility in the versions of dependencies they want to include in their projects while ensuring that certain conditions are met.
+
+Here's how the caret (^) and tilde (~) symbols are typically used:
+
+Caret (^):
+
+The caret symbol is used to specify a version range that allows for non-breaking updates.
+When used in a version range, such as ^1.2.3, it means that any version equal to or greater than 1.2.3 but less than the next major version (e.g., 2.0.0) is acceptable.
+For example, ^1.2.3 would match versions 1.2.3, 1.3.0, 1.4.5, but not 2.0.0.
+The caret symbol is commonly used for specifying dependencies in npm packages.
+Tilde (~):
+
+The tilde symbol is used to specify a version range that allows for only patch-level updates.
+When used in a version range, such as ~1.2.3, it means that any version equal to or greater than 1.2.3 but less than the next minor version (e.g., 1.3.0) is acceptable.
+For example, ~1.2.3 would match versions 1.2.3, 1.2.9, but not 1.3.0.
+The tilde symbol provides more strict version constraints compared to the caret symbol.
+Both the caret (^) and tilde (~) symbols are useful for specifying version ranges in a way that balances flexibility with ensuring compatibility with updates. However, it's important for developers to understand the implications of using each symbol and choose the appropriate one based on their specific requirements and project constraints.
+
+● Read about Script types in html (MDN Docs)

@@ -1,58 +1,29 @@
 1. What is Emmet?
-
-Emmet is a powerful toolkit for web developers that can greatly improve their workflow, especially when working with HTML and CSS. In Visual Studio Code (VS Code), Emmet is a built-in feature that provides shortcuts and abbreviations for writing HTML and CSS code more quickly and efficiently.
-
-With Emmet in VS Code, you can type simple abbreviations and then expand them into full HTML or CSS code snippets automatically. For example, typing "html:5" and then pressing the Tab key would expand into the basic structure of an HTML5 document.
-
-Emmet supports a wide range of abbreviations and shortcuts for generating HTML and CSS code, making it easier to write complex markup and stylesheets with minimal keystrokes.
-
-Overall, Emmet in VS Code is a valuable tool for front-end web developers, as it helps them write code faster and more efficiently.
+Emmet is a powerful tool for providing shortcuts and abbrevations of html and css code more quickly and efficiently
+html:5 -> give the boilerplate for html code
 
 2. Difference between a Library and Framework?
 
-The terms "library" and "framework" are often used interchangeably, but they represent distinct concepts in software development:
-
 Library:
 
-A library is a collection of reusable code modules or functions that provide specific functionality.
-Libraries typically consist of a set of functions or classes that you can call or use within your own code.
-Libraries are designed to be flexible and provide specific features or utilities without enforcing any particular structure or flow of your application.
-Examples of libraries include React for building user interfaces, TensorFlow for machine learning, and jQuery for DOM manipulation.
+Library is a collection of specific re-usable code/ functions to provide specific functionality. It's flexible and can call anywhere we want and doesn't follow any predefined structure/architecture.
+Eg : ReactJs
+
 Framework:
 
-A framework is a broader structure that provides a skeleton for building an application.
-Frameworks dictate the overall architecture, flow, and organization of your application.
-Frameworks often impose a specific structure or design pattern (such as MVC - Model-View-Controller) that developers must follow when building their applications.
-Frameworks usually include a set of libraries and tools that work together to provide a complete solution for developing software.
-Examples of frameworks include AngularJS for building web applications, Django for web development in Python, and .NET for building various types of applications in the Microsoft ecosystem.
-In summary, while both libraries and frameworks provide reusable code components, libraries focus on specific functionalities that you can use within your code, while frameworks provide a broader structure and dictate the overall architecture and flow of your application.
+Framework provides a skeleton for the code. It follows a architecture flow with MVC model. A combination of libraries and tools will madeup a framework
+
+Eg: AngularJS
 
 3. ● What is CDN? Why do we use it?
-CDN stands for Content Delivery Network. It is a distributed network of servers located in multiple data centers across various geographic locations. The primary purpose of a CDN is to deliver web content to users more efficiently, reliably, and quickly. Here's why we use CDNs:
-
-Faster Content Delivery: CDNs cache copies of static content (such as images, CSS files, JavaScript files, videos, and other media) on servers located closer to the end-users. When a user requests this content, the CDN serves it from the nearest server, reducing latency and load times. This results in faster content delivery and a better user experience.
-
-Improved Performance: By distributing content across multiple servers and leveraging caching mechanisms, CDNs help offload traffic from origin servers. This reduces the load on the origin server, improves its performance, and enhances overall website performance and scalability.
-
-Higher Availability and Reliability: CDNs replicate content across multiple servers and data centers, increasing redundancy and improving fault tolerance. If one server or data center fails, the CDN automatically redirects traffic to other available servers, ensuring continuous content delivery and minimizing downtime.
-
-Scalability: CDNs can handle sudden spikes in traffic more effectively by distributing the load across their network of servers. This scalability ensures that websites and web applications remain responsive and accessible even during periods of high demand, such as during promotional events or viral content sharing.
-
-Geographic Reach: CDNs have a global presence with servers located in various regions worldwide. This geographic distribution reduces the distance between users and content, resulting in shorter network routes and lower latency. It ensures that users from different parts of the world can access content quickly and reliably.
-
-Security: Many CDNs offer security features such as DDoS protection, web application firewall (WAF), SSL/TLS encryption, and content authentication. These security measures help mitigate cyber threats, protect against malicious attacks, and ensure the integrity and confidentiality of content delivered through the CDN.
+ CDN -> Content Delivery Network. Collection of networks are shared between multiple data centers within different geographic locations to support users high efficiency and quick results.
 
 Overall, CDNs are used to optimize content delivery, enhance website performance, improve scalability and availability, and provide enhanced security features, ultimately resulting in a better user experience and higher satisfaction.
 
 
 4. ● Why is React known as React?
-React, the popular JavaScript library for building user interfaces, is known as "React" because of the way it manages updates to the user interface. The name "React" comes from its core concept of reacting to changes in data and automatically updating the UI to reflect those changes.
 
-In React, you define UI components as functions or classes that return a representation of what should be rendered on the screen. These components are then composed together to create complex UIs. When the underlying data changes, React automatically updates the UI to reflect those changes, without the need for manual manipulation of the DOM (Document Object Model).
-
-The key idea behind React is its "reactive" nature, where the UI reacts to changes in data and updates itself accordingly. This approach simplifies the process of building interactive and dynamic web applications, as developers can focus on describing the UI in terms of components and let React handle the rendering and updating logic efficiently.
-
-So, the name "React" embodies the core principle of the library, which is to create reactive and responsive user interfaces that dynamically update in response to changes in data.
+ React comes from the core concept of it's reactive nature to automatically update the UI screen on data change without manuual updation of DOM
 
 5.● What is crossorigin in script tag?
 
