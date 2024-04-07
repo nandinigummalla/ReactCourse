@@ -1,39 +1,53 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// functional component  -- a normal js function which returns JSX element or react elements
-// component name should starts with capital letters
+// Nested Header using React.createElement
+const nestedHeading = React.createElement("div", { className: "title" }, [
+  React.createElement("h1", {}, "title1"),
+  React.createElement("h2", {}, "title2"),
+  React.createElement("h3", {}, "title3"),
+]);
 
-// one way to create functional component
-const HeadingFunction = () => {
-  return <h1>Hiee</h1>;
-};
-
-// other way to create functional component
-const OtherHeadingFunction = () => <h1>hello</h1>;
-
-const Title = () => <h1> Title </h1>;
-
-// Component in Component is component composition
-// we can call a functioncomponent as a normal function also
-// all 3 calling of title are same
-const MainHeading = () => (
-  <div>
-    {Title()}
-    <Title />
-    <Title></Title>
-    <h2>Component composition</h2>
+// Nested Header using JSX Elements
+const nestedHeadingwithJsx = (
+  <div class="title">
+    <h1>title1</h1>
+    <h2>title2</h2>
+    <h3>title3</h3>
   </div>
 );
 
-// React element in react element
-const headElement = <h1>Hello I am react element</h1>;
-const mainHead = (
-  <div>
-    Hie I aam MainHeading
-    {headElement}
+const Title2 = () => <h2>title2</h2>;
+
+// Nested Header using JSX Functions and component composition
+
+//     {Title2}  -- this wont work but  {Title2()} will work
+const NestedHeaderComponent = () => (
+  <div className="title">
+    <h1>title1</h1>
+    <Title2 />
+    {Title2()}
+    {<Title2 />}
+    {<Title2></Title2>}
   </div>
 );
+
+// Header with logo search bar icon and css
+
+const Header = () => (
+  <div className="header">
+    <h2 className="logo">Nandini</h2>
+    <h2 className="search">
+      <input type="text" placeholder="Search here" />
+      <button>
+        <i className="fa fa-search"></i>
+      </button>
+    </h2>
+    <h2 className="login">
+      <i className="fa fa-fw fa-user"></i>
+    </h2>
+  </div>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// for rendering component need to specify in </>
-root.render(<MainHeading />);
+root.render(<Header />);
