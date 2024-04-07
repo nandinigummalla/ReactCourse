@@ -1,0 +1,168 @@
+1.  What is JSX?
+
+JSX is Javascript XML. It's a extension of JS which supports html like syntax and allows users to write JS inside it using {}. JSX will be compiled or transpiled before executing in the browser.
+
+2.  Superpowers of JSX
+
+
+Certainly! Here are some powerful features of JSX:
+
+Integration of JavaScript Expressions: JSX allows developers to embed JavaScript expressions directly within the markup. This enables dynamic content rendering, conditional rendering, and other logic directly within the JSX code.
+
+jsx
+Copy code
+const name = 'John';
+const element = <h1>Hello, {name}!</h1>;
+Component Composition: JSX facilitates component-based development by allowing developers to define reusable UI components. Components can be composed together to create complex user interfaces, promoting code reuse and maintainability.
+
+jsx
+Copy code
+const Button = ({ onClick, children }) => (
+  <button onClick={onClick}>{children}</button>
+);
+
+const App = () => (
+  <div>
+    <h1>Welcome to my App</h1>
+    <Button onClick={() => alert('Button clicked')}>Click Me</Button>
+  </div>
+);
+JSX Attributes: JSX supports HTML-like attributes, which can be used to pass data or event handlers to components. These attributes are passed as props to the component and can be accessed within the component's definition.
+
+jsx
+Copy code
+const InputField = ({ label, value, onChange }) => (
+  <div>
+    <label>{label}</label>
+    <input type="text" value={value} onChange={onChange} />
+  </div>
+);
+
+const App = () => {
+  const handleChange = (event) => {
+    console.log(event.target.value);
+  };
+  
+  return (
+    <div>
+      <InputField label="Name:" value="" onChange={handleChange} />
+    </div>
+  );
+};
+Conditional Rendering: JSX allows for conditional rendering using JavaScript's ternary operator, logical AND (&&) operator, or by using traditional if statements inside curly braces {}.
+
+jsx
+Copy code
+const App = ({ isLoggedIn }) => (
+  <div>
+    {isLoggedIn ? <p>Welcome, User!</p> : <p>Please log in.</p>}
+  </div>
+);
+Inline Styles: JSX supports inline styles using JavaScript objects, allowing developers to apply styles directly within the JSX code without the need for external CSS files.
+
+jsx
+Copy code
+const App = () => {
+  const styles = {
+    color: 'red',
+    fontSize: '20px',
+  };
+  
+  return <div style={styles}>Styled text</div>;
+};
+These features make JSX a powerful and expressive syntax for building user interfaces in React and other JavaScript frameworks. It combines the familiarity of HTML with the flexibility and power of JavaScript, enabling developers to create dynamic and interactive web applications with ease.
+
+
+3. Role of type attribute in script tag? What options can I use there?
+
+The type attribute in the <script> tag specifies the media type (MIME type) of the script content being included. While in HTML4, the type attribute was required, in HTML5, it's optional for JavaScript, with the default value being text/javascript. However, it's still relevant for other types of scripts.
+
+Here are some options for the type attribute in the <script> tag:
+
+type="text/javascript" (Default): This is the default value for the type attribute in HTML5. It indicates that the content of the <script> tag is JavaScript code.
+
+html
+Copy code
+<script type="text/javascript">
+  // JavaScript code here
+</script>
+type="module": This specifies that the script is a module script, which allows you to use JavaScript modules. Module scripts have their own scope and can export/import functionality.
+
+html
+Copy code
+<script type="module">
+  import { hello } from './example.js';
+  hello();
+</script>
+type="text/html": This indicates that the content of the <script> tag is HTML code. This usage is uncommon and not recommended due to potential security risks.
+
+html
+Copy code
+<script type="text/html">
+  <div>This is HTML content inside a script tag</div>
+</script>
+type="text/css": This specifies that the content of the <script> tag is CSS code. This usage is also uncommon and not recommended, as it violates the HTML specification and may cause unexpected behavior in some browsers.
+
+html
+Copy code
+<script type="text/css">
+  body { background-color: yellow; }
+</script>
+In practice, you will mostly use type="text/javascript" for regular JavaScript code and type="module" for JavaScript modules. The other options (text/html and text/css) are rarely used and generally not recommended due to potential security risks and violation of HTML specifications.
+
+4. {TitleComponent} vs {<TitleComponent/>} vs  {<TitleComponent></TitleComponent>} in JSX
+
+In JSX, {TitleComponent}, {<TitleComponent/>}, and {<TitleComponent></TitleComponent>} all represent the same thing conceptually – they are JSX expressions that render the TitleComponent component.
+
+However, there are slight differences in syntax and behavior:
+
+{TitleComponent}:
+
+This syntax represents embedding the TitleComponent component directly within curly braces {}.
+
+It's commonly used when passing components as props or assigning them to variables.
+
+jsx
+Copy code
+const title = <TitleComponent />;
+return (
+  <div>
+    {title}
+  </div>
+);
+{<TitleComponent/>}:
+
+This syntax represents a self-closing JSX tag for the TitleComponent.
+
+It's commonly used when rendering components directly within JSX without additional nesting or when the component has no children.
+
+jsx
+Copy code
+return (
+  <div>
+    <TitleComponent />
+  </div>
+);
+{<TitleComponent></TitleComponent>}:
+
+This syntax is similar to {<TitleComponent/>}, but it explicitly opens and closes the JSX tag with an opening and closing tag.
+
+It's not commonly used unless you need to add children elements to the TitleComponent.
+
+jsx
+Copy code
+return (
+  <div>
+    <TitleComponent>
+      <span>Child element</span>
+    </TitleComponent>
+  </div>
+);
+In practice, the choice between these syntaxes depends on readability, personal preference, and specific requirements of your JSX code. The first and second syntaxes are more common, while the third one is less frequently used, except when you need to include children elements within the component.
+
+
+
+
+
+
+
